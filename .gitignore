@@ -3,6 +3,7 @@
 # ============================================
 
 
+
 # 忽略 vscode 设置文件夹、 测试用cmake配置文件夹、 cmake 生成的 build 文件夹
 /.vscode
 /cmake_test
@@ -13,13 +14,9 @@
 /CLAUDE.md
 
 # 忽略下载的依赖库
-# 如果你想将依赖库纳入版本控制，请注释掉下面的行
 /external/SDL-release-*/
 /external/SDL_image-release-*/
 /external/SDL_mixer-release-*/
 /external/SDL_ttf-release-*/
 /external/glm-*/
 /external/spdlog-*/
-
-# 忽略 PowerShell 下载脚本的缓存
-/EscapeFromGhost-Dependencies/
