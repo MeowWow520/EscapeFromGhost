@@ -2,7 +2,7 @@
 # 项目主配置文件
 # ============================================
 cmake_minimum_required(VERSION 3.10.0)
-project(GhostEscape VERSION 0.1.0 LANGUAGES C CXX)
+project(EscapeFromGhost VERSION 0.1.0 LANGUAGES C CXX)
 
 # ============================================
 # 基础配置
@@ -50,6 +50,7 @@ setup_project_dependencies()
 
 set(SOURCES
     src/main.cpp
+    src/core/Game.cpp
 )
 
 # Windows平台添加资源文件
