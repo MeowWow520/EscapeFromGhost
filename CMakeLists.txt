@@ -49,42 +49,10 @@ setup_project_dependencies()
 # ============================================
 
 set(SOURCES
-    src/core/game.cpp
-    src/core/asset_store.cpp
-    src/core/object.cpp
-    src/core/object_world.cpp
-    src/core/object_affiliate.cpp
-    src/core/scene.cpp
-    src/core/actor.cpp
-    src/screen/ui_mouse.cpp
-    src/screen/hud_stats.cpp
-    src/screen/hud_skill.cpp
-    src/screen/hud_text.cpp
-    src/screen/hud_button.cpp
-    src/raw/stats.cpp
-    src/raw/weapon.cpp
-    src/raw/timer.cpp
-    src/raw/bg_star.cpp
-    src/world/effect.cpp
-    src/world/spell.cpp
-    src/affiliate/sprite.cpp
-    src/affiliate/sprite_anim.cpp
-    src/affiliate/collider.cpp
-    src/affiliate/affiliate_bar.cpp
-    src/affiliate/text_label.cpp
-    src/spawner.cpp
-    src/player.cpp
-    src/enemy.cpp
-    src/weapon_thunder.cpp
     src/main.cpp
-    src/scene_title.cpp
-    src/scene_main.cpp
 )
 
 # Windows平台添加资源文件
-if(WIN32)
-    list(APPEND SOURCES resources.rc)
-endif()
 
 # ============================================
 # 可执行文件配置
