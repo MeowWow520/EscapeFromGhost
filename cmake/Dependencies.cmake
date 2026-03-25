@@ -205,8 +205,8 @@ function(setup_project_dependencies)
         SDL3_mixer
         SDL3_mixer
         "https://github.com/libsdl-org/SDL_mixer.git"
-        "30c1301055a35ee87b8679279b6fc88e10d28fa3"
-        "external/SDL_mixer-30c1301"
+        "release-3.2.0"
+        "external/SDL_mixer-release-3.2.0"
         AUTO  # 使用全局BUILD_SHARED_LIBS设置
     )
 
