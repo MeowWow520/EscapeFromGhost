@@ -2,10 +2,10 @@
 
 
 
-int main(int argc, char** argv)
+int main()
 {
-    Game& game = Game::getInstance();
-    game.Initialize("Escape Form Ghost", 1280, 720);
-    game.Running(argc, argv);
+    Game& gameInstance = Game::getInstance();
+    gameInstance.Initialize("Escape Form Ghost", 1280, 720);
+    gameInstance.Running();
     return 0;
 }
