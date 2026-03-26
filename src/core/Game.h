@@ -6,7 +6,7 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_image.h>
 #include <SDL3/SDL_ttf.h>
-#include <SDL2/SDL_mixer.h>
+#include <SDL3/SDL_mixer.h>
 #include <glm/glm.hpp>
 
 
@@ -38,7 +38,7 @@ public:
      * 运行主循环
      * @return 返回 0：成功；返回 -1：初始化库失败。
      */
-    int Running();
+    int Running(int argc, char *argv[]);
     int Initialize(std::string title, int width, int height); // 初始化游戏
     int handleEvents(); // 处理事件
     int Update(float dt); // 更新游戏状态

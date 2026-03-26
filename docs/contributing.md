@@ -44,7 +44,7 @@
 
 项目使用以下主要依赖库：
 
-- **SDL3**: release-3.2.24
+- **SDL3**: release-3.4.2
 - **SDL3_image**: release-3.2.4
 - **SDL3_mixer**: release-3.2.0
 - **SDL3_ttf**: release-3.2.2

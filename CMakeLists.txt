@@ -66,7 +66,7 @@ add_executable(${TARGET} ${SOURCES})
 target_link_libraries(${TARGET}
     SDL3::SDL3
     SDL3_image::SDL3_image
-    SDL2_mixer::SDL2_mixer
+    SDL3_mixer::SDL3_mixer
     SDL3_ttf::SDL3_ttf
     glm::glm
 )

@@ -2,10 +2,13 @@
 
 
 
-int Game::Running() {
+int Game::Running(int argc, char *argv[]) {
+    (void)argc, (void)argv;
 
     while (isRunning_) {
+        // 计算帧率延迟
         Uint64 start = SDL_GetTicksNS();
+
 
 
         //<!-- START 逻辑处理
@@ -13,6 +16,8 @@ int Game::Running() {
         Update(delatTime_);
         Render();
         //<!-- END 逻辑处理
+
+
 
         // 计算帧率延迟
         Uint64 end = SDL_GetTicksNS();
@@ -22,7 +27,6 @@ int Game::Running() {
             SDL_DelayNS(sdlDelatTimesNS);
             delatTime_ = (float)(frameDelay_ / 1.0e9);
         } else { delatTime_ = (float)(elapsed / 1.0e9); }
-        SDL_Log("FPS: %f", 1.0f / delatTime_);
     }
     return 0;
 }
@@ -42,7 +46,7 @@ int Game::Initialize(std::string title, int width, int height) {
         return -1;
     }
     // 初始化 SDL_mixer
-    if (!Mix_Init(MIX_INIT_MP3 | MIX_INIT_OGG)) {
+    if (!MIX_Init()) {
        SDL_Log("Couldn't initialize MIX_Init: %s", SDL_GetError());
        isRunning_ = false;
        return -1;
@@ -105,10 +109,9 @@ int Game::Clean() {
 
     // 清理 SDL 库
     SDL_Quit();
-    Mix_Quit();
+    MIX_Quit();
     TTF_Quit();
 
     // 清理 SDL 资源
-
     return 0;
 }

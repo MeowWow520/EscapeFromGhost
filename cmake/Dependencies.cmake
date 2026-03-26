@@ -180,8 +180,8 @@ function(setup_project_dependencies)
         SDL3
         SDL3
         "https://github.com/libsdl-org/SDL.git"
-        "release-3.2.24"
-        "external/SDL-release-3.2.24"
+        "release-3.4.2"
+        "external/SDL-release-3.4.2"
         AUTO  # 使用全局BUILD_SHARED_LIBS设置
     )
 
@@ -200,14 +200,14 @@ function(setup_project_dependencies)
         AUTO  # 使用全局BUILD_SHARED_LIBS设置
     )
 
-    # SDL2_mixer
+    # SDL3_mixer
     find_or_fetch_dependency(
-        SDL2_mixer
-        SDL2_mixer
+        SDL3_mixer
+        SDL3_mixer
         "https://github.com/libsdl-org/SDL_mixer.git"
-        "release-2.8.1"
-        "external/SDL_mixer-release-2.8.1"
-        AUTO  # 使用全局BUILD_SHARED_LIBS设置
+        "release-3.2.0"
+        "external/SDL_mixer-release-3.2.0"
+        STATIC
     )
 
     # SDL3_ttf
