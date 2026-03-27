@@ -4,7 +4,7 @@
 # 功能：设置C++标准、编译选项、字符编码等
 
 # 设置C++标准
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_EXTENSIONS OFF)
 

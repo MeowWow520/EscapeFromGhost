@@ -2,7 +2,6 @@
 
 
 
-
 void Game::Running(int argc, char *argv[]) {
     (void)argc, (void)argv;
 
@@ -92,6 +91,7 @@ void Game::handleEvents() {
 }
 
 void Game::Update(float dt) {
+    (void)dt;
     // currentScene_->Update(dt);
 }
 

@@ -6,14 +6,13 @@
 #include <SDL3/SDL_ttf.h>
 #include <SDL3/SDL_mixer.h>
 #include <glm/glm.hpp>
+#include "../SceneMain.h"
 
-
-
-
-class Scene;
 class Object;
 
 class Game {
+private:
+
     // 变量
     glm::vec2 windowSize_ = glm::vec2(0);
     bool isRunning_ = true;
@@ -26,7 +25,6 @@ class Game {
     // 场景
     Scene* currentScene_ = nullptr;
 
-private:
     // 私有构造函数
     Game() { }
     // 禁止拷贝构造函数与赋值操作符
