@@ -6,7 +6,6 @@
 #include <SDL3/SDL_ttf.h>
 #include <SDL3/SDL_mixer.h>
 #include <glm/glm.hpp>
-#include "../SceneMain.h"
 
 
 

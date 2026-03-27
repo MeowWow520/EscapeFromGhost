@@ -4,9 +4,13 @@
 
 void SceneMain::Initialize() {  }
 
-void SceneMain::handleEvents(SDL_Event& event) { }
+void SceneMain::handleEvents(SDL_Event& event) {
+    (void)event;
+}
 
-void SceneMain::Update(float dt) { }
+void SceneMain::Update(float dt) {
+    (void)dt;
+ }
 
 void SceneMain::Render() { }
 
