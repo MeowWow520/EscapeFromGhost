@@ -1,6 +1,5 @@
 #ifndef SCENEMAIN_H
 #define SCENEMAIN_H
-#include <SDL3/SDL.h>
 #include "core/Scene.h"
 
 
@@ -19,4 +18,6 @@ public:
 
 };
 
-#endif // SCENEMAIN_H
+
+
+#endif // SCENE_MAIN_H

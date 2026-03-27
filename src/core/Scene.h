@@ -8,10 +8,7 @@
 
 class Scene: public Object {
 
-protected:
-    // 相机位置属性, 用于视口移动和世界坐标转换
     glm::vec2 cameraPosition_ = glm::vec2(0);
-    // 场景中的物体
     std::vector<Object*> objects_;
 
 public:
@@ -24,5 +21,7 @@ public:
     virtual void Render() override { }
     virtual void Clean() override { }
 };
+
+
 
 #endif // SCENE_H

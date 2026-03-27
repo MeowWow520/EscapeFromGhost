@@ -13,6 +13,11 @@ class Object;
 class Game {
 private:
 
+class Scene;
+
+
+class Game
+{
     // 变量
     glm::vec2 windowSize_ = glm::vec2(0);
     bool isRunning_ = true;
@@ -22,9 +27,9 @@ private:
     // 帧延迟
     Uint64 frameDelay_ = 0;
     Uint64 FPS_ = 120;
-    // 场景
     Scene* currentScene_ = nullptr;
 
+private:
     // 私有构造函数
     Game() { }
     // 禁止拷贝构造函数与赋值操作符

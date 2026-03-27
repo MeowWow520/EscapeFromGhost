@@ -1,24 +1,22 @@
 #ifndef OBJECT_H
 #define OBJECT_H
-#include <SDL3/SDL.h>
 #include "Game.h"
 
 
-class Game;
 
 class Object {
+    Game& gameInstance_ = Game::getInstance();
 
 public:
-    Object();
+    Object() = default;
     virtual ~Object() = default;
 
     virtual void Initialize() { }
     virtual void handleEvents(SDL_Event& event) { }
-    virtual void Update(float dt) { }
+    virtual void Update(float deltaTime) { }
     virtual void Render() { }
-
-protected:
-    Game* gameInstance = Game::getInstance();
+    virtual void Clean() { }
 };
 
-#endif //! OBJECT_H
+
+#endif // OBJECT_H
