@@ -8,16 +8,12 @@
 #include <glm/glm.hpp>
 #include "../SceneMain.h"
 
-class Object;
 
-class Game {
-private:
 
 class Scene;
 
 
-class Game
-{
+class Game {
     // 变量
     glm::vec2 windowSize_ = glm::vec2(0);
     bool isRunning_ = true;
