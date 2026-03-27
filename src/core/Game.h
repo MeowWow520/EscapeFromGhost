@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef GAME_H
 #define GAME_H
 #include <string>
@@ -9,6 +7,9 @@
 #include <SDL3/SDL_mixer.h>
 #include <glm/glm.hpp>
 
+
+
+class Scene;
 
 
 class Game
@@ -22,6 +23,8 @@ class Game
     // 帧延迟
     Uint64 frameDelay_ = 0;
     Uint64 FPS_ = 120;
+    Scene* currentScene_ = nullptr;
+
 private:
     // 私有构造函数
     Game() { }
