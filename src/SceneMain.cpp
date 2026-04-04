@@ -2,9 +2,12 @@
 
 
 
-void SceneMain::Initialize() {  }
+void SceneMain::Initialize() { 
+    worldSize_ = gameInstance_.getWindowSize() * 3.0f;
+    cameraPosition_ = glm::vec2(-100.00f, -100.00f);
+ }
 
-void SceneMain::handleEvents(SDL_Event& event) {
+void SceneMain::HandleEvents(SDL_Event& event) {
     (void)event;
 }
 

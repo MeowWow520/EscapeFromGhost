@@ -13,7 +13,7 @@ void Game::Running(int argc, char *argv[]) {
 
 
         //<!-- START 逻辑处理
-        handleEvents();
+        HandleEvents();
         Update(deltaTime_);
         Render();
         //<!-- END 逻辑处理
@@ -76,7 +76,7 @@ void Game::Initialize(std::string title, int width, int height) {
     // 创建场景类
 }
 
-void Game::handleEvents() {
+void Game::HandleEvents() {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
         switch (event.type) {
@@ -85,7 +85,7 @@ void Game::handleEvents() {
             SDL_Log("Received SDL_EVENT_QUIT event, main loop quit");
             break;
         default:
-            // currentScene_->handleEvents(event);
+            // currentScene_->HandleEvents(event);
             break;
         }
     }
@@ -122,4 +122,27 @@ void Game::Clean() {
     TTF_Quit();
 
     // 清理 SDL 资源
+}
+
+void Game::drawGrid(const glm::vec2 &top_left, const glm::vec2 &botton_right, float grid_width, SDL_FColor fcolor) {
+    SDL_SetRenderDrawColorFloat(renderer_, fcolor.r, fcolor.g, fcolor.b, fcolor.a);
+    for (float x = top_left.x; x <= botton_right.x; x += grid_width)
+        SDL_RenderLine(renderer_, x, top_left.y, x, botton_right.y);
+    for (float y = top_left.y; y <= botton_right.y; y += grid_width)
+        SDL_RenderLine(renderer_, top_left.x, y, botton_right.x, y);
+    SDL_SetRenderDrawColorFloat(renderer_, 0, 0, 0, 1);
+}
+
+void Game::drawBoundary(const glm::vec2 &top_left, const glm::vec2 &botton_right, float boundary_width, SDL_FColor fcolor) {
+    SDL_SetRenderDrawColorFloat(renderer_, fcolor.r, fcolor.g, fcolor.b, fcolor.a);
+    for (float i = 0; i < boundary_width; i++){
+        SDL_FRect rect = {
+            top_left.x - i,
+            top_left.y - i,
+            botton_right.x - top_left.x + 2 * i,
+            botton_right.y - top_left.y + 2 * i
+        };
+        SDL_RenderRect(renderer_, &rect);
+    }
+    SDL_SetRenderDrawColorFloat(renderer_, 0, 0, 0, 1);
 }

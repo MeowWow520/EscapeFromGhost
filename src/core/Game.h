@@ -49,10 +49,20 @@ public:
      * @return 返回 0：成功；返回 -1：初始化失败。
      */   
     void Initialize(std::string title, int width, int height); // 初始化游戏
-    void handleEvents(); // 处理事件
+    void HandleEvents(); // 处理事件
     void Update(float dt); // 更新游戏状态
     void Render(); // 渲染游戏
     void Clean(); // 清理游戏资源
+
+    glm::vec2 getWindowSize() const { return windowSize_; }
+    void drawGrid(const glm::vec2& top_left, 
+                  const glm::vec2& botton_right, 
+                  float grid_width,
+                  SDL_FColor fcolor);
+    void drawBoundary(const glm::vec2& top_left,
+                      const glm::vec2& botton_right, 
+                      float boundary_width, 
+                      SDL_FColor fcolor); // 绘制边界
 };
 
 

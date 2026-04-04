@@ -13,7 +13,7 @@ public:
     virtual ~Object() = default;
 
     virtual void Initialize() { }
-    virtual void handleEvents([[maybe_unused]] SDL_Event& event) { }
+    virtual void HandleEvents([[maybe_unused]] SDL_Event& event) { }
     virtual void Update([[maybe_unused]] float dt) { }
     virtual void Render() { }
     virtual void Clean() { }
