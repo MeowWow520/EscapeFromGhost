@@ -229,6 +229,15 @@ function(setup_project_dependencies)
         "external/glm-1.0.1"
         STATIC  # GLM通常使用静态链接，动态很可能出错
     )
+
+    find_or_fetch_dependency(
+        nlohmann_json
+        nlohmann_json
+        "https://github.com/nlohmann/json.git"
+        "v3.11.3"
+        "external/json-3.12.0"
+        STATIC  # header-only 库，链接类型不影响
+    )
     
 endfunction()
 

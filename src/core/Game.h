@@ -1,11 +1,17 @@
 #ifndef GAME_H
 #define GAME_H
+#include <iostream>
+#include <fstream>
 #include <string>
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_image.h>
 #include <SDL3/SDL_ttf.h>
 #include <SDL3/SDL_mixer.h>
 #include <glm/glm.hpp>
+#include <nlohmann/json.hpp>
+#define FCP_IMPLEMENTATION
+#include "ffc.h"
+
 
 
 
@@ -14,19 +20,34 @@ class Scene;
 
 class Game {
     // 变量
-    glm::vec2 windowSize_ = glm::vec2(0);
-    bool isRunning_ = true;
-    SDL_Window* window_ = nullptr;
-    SDL_Renderer* renderer_ = nullptr;
-    float deltaTime_ = 0.00f;
+    std::string title_;
+    glm::vec2 windowSize_;
+    bool isRunning_;
+    SDL_Window* window_;
+    SDL_Renderer* renderer_;
+    float deltaTime_;
+    nlohmann::json json_;
     // 帧延迟
-    Uint64 frameDelay_ = 0;
-    Uint64 FPS_ = 120;
-    Scene* currentScene_ = nullptr;
+    Uint64 frameDelay_;
+    Uint64 FPS_;
+    Scene* currentScene_;
 
 private:
     // 私有构造函数
-    Game() { }
+    Game() { 
+        std::ifstream jsonFile_("assets/json/config.json");
+        jsonFile_ >> json_;
+        title_ = json_["window"]["title"];
+        windowSize_ = glm::vec2(json_["window"]["width"], json_["window"]["height"]);
+        FPS_ = json_["window"]["FPS"];
+
+        isRunning_ = true;
+        window_ = nullptr;
+        renderer_ = nullptr;
+        deltaTime_ = 0.00f;
+        frameDelay_;
+        currentScene_ = nullptr;
+    }
     // 禁止拷贝构造函数与赋值操作符
     Game(const Game&) = delete;
     Game& operator=(const Game&) = delete;
@@ -48,21 +69,13 @@ public:
      * @param height 窗口高度
      * @return 返回 0：成功；返回 -1：初始化失败。
      */   
-    void Initialize(std::string title, int width, int height); // 初始化游戏
+    void Initialize(); // 初始化游戏
     void HandleEvents(); // 处理事件
     void Update(float dt); // 更新游戏状态
     void Render(); // 渲染游戏
     void Clean(); // 清理游戏资源
 
     glm::vec2 getWindowSize() const { return windowSize_; }
-    void drawGrid(const glm::vec2& top_left, 
-                  const glm::vec2& botton_right, 
-                  float grid_width,
-                  SDL_FColor fcolor);
-    void drawBoundary(const glm::vec2& top_left,
-                      const glm::vec2& botton_right, 
-                      float boundary_width, 
-                      SDL_FColor fcolor); // 绘制边界
 };
 
 
