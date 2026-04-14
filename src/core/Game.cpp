@@ -34,8 +34,8 @@ void Game::Initialize()
 {
     // 初始化 SDL
     ffc::cfb(SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO));
-    ffc::cfb((TTF_Init()));
-    ffc::cfb((MIX_Init()));
+    ffc::cfb(TTF_Init());
+    ffc::cfb(MIX_Init());
     // TODO:    初始化 mixer 设置
 
     // 创建窗口
@@ -64,7 +64,6 @@ void Game::HandleEvents() {
         switch (event.type) {
         case SDL_EVENT_QUIT:
             isRunning_ = false;
-            SDL_Log("Received SDL_EVENT_QUIT event, main loop quit");
             break;
         default:
             // currentScene_->HandleEvents(event);

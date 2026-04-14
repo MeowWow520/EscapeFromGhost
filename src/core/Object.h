@@ -5,7 +5,7 @@
 
 
 class Object {
-    protected:
+protected:
     Game& gameInstance_ = Game::getInstance();
 
 public:

@@ -45,7 +45,7 @@ private:
         window_ = nullptr;
         renderer_ = nullptr;
         deltaTime_ = 0.00f;
-        frameDelay_;
+        frameDelay_ = 0;
         currentScene_ = nullptr;
     }
     // 禁止拷贝构造函数与赋值操作符

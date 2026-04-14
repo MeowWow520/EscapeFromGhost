@@ -2,7 +2,7 @@
     "window": {
         "title": "Escape from ghost",
         "width": 1960,
-        "height": 1080,
+        "height": 200,
         "FPS": 120
     }
 }

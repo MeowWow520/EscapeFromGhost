@@ -1,0 +1,8 @@
+{
+    "player": {
+        "texture": "assets/xxx.jpg",
+        "sound": {
+            "hit": "assets/xxx.wav"
+        }
+    }
+}
