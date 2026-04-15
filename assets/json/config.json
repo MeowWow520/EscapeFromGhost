@@ -2,7 +2,11 @@
     "window": {
         "title": "Escape from ghost",
         "width": 1960,
-        "height": 200,
+        "height": 1080,
         "FPS": 120
+    },
+    "SceneMain": {
+        "worldScale": 3.00,
+        "initCameraPos": [100, 100]
     }
 }

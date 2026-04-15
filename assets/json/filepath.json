@@ -1,7 +1,12 @@
 {
-    "player": {
-        "texture": "assets/xxx.jpg",
-        "sound": {
+    "SceneMain": {
+        "backgrds": {
+            "green": "assets/Background/Green_Nebula/008.png",
+            "blue": "assets/Background/Blue_Nebula/008.png",
+            "purple": "assets/Background/Purple_Nebula/008.png"
+        },
+        "backgrdtype": "green",
+        "sounds": {
             "hit": "assets/xxx.wav"
         }
     }

@@ -1,5 +1,7 @@
 #ifndef SCENE_H
 #define SCENE_H
+#include <iostream>
+#include <cmath>
 #include <vector>
 #include <glm/glm.hpp>
 #include "Object.h"
@@ -8,7 +10,7 @@
 
 class Scene: public Object {
 
-    glm::vec2 cameraPosition_ = glm::vec2(0);
+    glm::vec2 cameraPosition_;
     std::vector<Object*> objects_;
 
 public:

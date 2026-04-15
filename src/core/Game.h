@@ -26,7 +26,7 @@ class Game {
     SDL_Window* window_;
     SDL_Renderer* renderer_;
     float deltaTime_;
-    nlohmann::json json_;
+    nlohmann::json configJson_;
     // 帧延迟
     Uint64 frameDelay_;
     Uint64 FPS_;
@@ -34,19 +34,25 @@ class Game {
 
 private:
     // 私有构造函数
-    Game() { 
-        std::ifstream jsonFile_("assets/json/config.json");
-        jsonFile_ >> json_;
-        title_ = json_["window"]["title"];
-        windowSize_ = glm::vec2(json_["window"]["width"], json_["window"]["height"]);
-        FPS_ = json_["window"]["FPS"];
+    Game() {
+        // 读取配置文件
+        // TODO: 关闭文件
+        std::ifstream configJsonFile_("assets/json/config.json");
+        configJsonFile_ >> configJson_;
+        title_ = configJson_["window"]["title"];
+        windowSize_ = glm::vec2(configJson_["window"]["width"], configJson_["window"]["height"]);
+        FPS_ = configJson_["window"]["FPS"];
+        // FIXME: 关闭文件
+        configJsonFile_.close();
+
 
         isRunning_ = true;
         window_ = nullptr;
         renderer_ = nullptr;
         deltaTime_ = 0.00f;
-        frameDelay_ = 0;
+        frameDelay_ = (Uint64)(1e9 / FPS_);
         currentScene_ = nullptr;
+
     }
     // 禁止拷贝构造函数与赋值操作符
     Game(const Game&) = delete;
@@ -75,7 +81,20 @@ public:
     void Render(); // 渲染游戏
     void Clean(); // 清理游戏资源
 
+
     glm::vec2 getWindowSize() const { return windowSize_; }
+    bool getIsRunning() const { return isRunning_; }
+    SDL_Window* getWindow() { return window_; }
+    SDL_Renderer* getRenderer() { return renderer_; }
+    // 绘制网格
+    void drawGrid(const glm::vec2& top_left,
+                  const glm::vec2& botton_right,
+                  float grid_width, SDL_FColor fcolor );
+    // 绘制边界
+    void drawBoundary(const glm::vec2& top_left, 
+                      const glm::vec2& botton_right, 
+                      float boundary_width, SDL_FColor fcolor );
+
 };
 
 
