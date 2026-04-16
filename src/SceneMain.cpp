@@ -14,6 +14,11 @@ void SceneMain::Initialize()
     cameraPosition_ = glm::vec2(configJson_["SceneMain"]["initCameraPos"][0], 
                                 configJson_["SceneMain"]["initCameraPos"][1] );
 
+    player_ = nullptr;
+    player_ = new Player();
+    player_->Initialize();
+    player_->setPosition(worldSize_ / 2.0f);
+
 }
 
 void SceneMain::HandleEvents(SDL_Event& event)

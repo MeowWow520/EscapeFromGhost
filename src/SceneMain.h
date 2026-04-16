@@ -6,15 +6,18 @@
 #include <algorithm>
 #include <string>
 #include "core/Scene.h"
+#include "core/ffc.h"
+#include "Player.h"
 
 
 
-class SceneMain: public Scene {
+class SceneMain: public Scene
+{
     float worldScale;
     nlohmann::json configJson_;
     glm::vec2 worldSize_;
     glm::vec2 cameraPosition_;
-
+    Player* player_;
 public:
     SceneMain() = default;
     virtual ~SceneMain() = default;

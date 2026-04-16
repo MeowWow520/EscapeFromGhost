@@ -12,8 +12,18 @@ class Scene: public Object {
 
     glm::vec2 cameraPosition_;
     std::vector<Object*> objects_;
+    
+protected:
+    glm::vec2 worldSize_;
 
 public:
+    // 坐标转换
+    glm::vec2 worldToScreen(const glm::vec2 &world_position) const {
+        return world_position - cameraPosition_;
+    }
+    glm::vec2 screenToWorld(const glm::vec2 &screen_position) const {
+        return screen_position + cameraPosition_;
+    }
     Scene() = default;
     virtual ~Scene() = default;
 

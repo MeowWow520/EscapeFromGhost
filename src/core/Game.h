@@ -18,7 +18,8 @@
 class Scene;
 
 
-class Game {
+class Game
+{
     // 变量
     std::string title_;
     glm::vec2 windowSize_;
@@ -86,6 +87,7 @@ public:
     bool getIsRunning() const { return isRunning_; }
     SDL_Window* getWindow() { return window_; }
     SDL_Renderer* getRenderer() { return renderer_; }
+    Scene* getCurrentScene() { return currentScene_; }
     // 绘制网格
     void drawGrid(const glm::vec2& top_left,
                   const glm::vec2& botton_right,

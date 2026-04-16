@@ -88,7 +88,8 @@ void Game::Render()
     SDL_RenderPresent(renderer_);
 }
 
-void Game::Clean() { 
+void Game::Clean()
+{ 
 
     // 销毁当前场景
     if (currentScene_ != nullptr) {
