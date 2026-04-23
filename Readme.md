@@ -1,3 +1,10 @@
+> **THIS REPOSITORY HAS BEEN ARCHIVED**
+>
+> Because CODING ARE SO DIRTY
+
+
+
+
 ## Escape From Ghost
 
 
